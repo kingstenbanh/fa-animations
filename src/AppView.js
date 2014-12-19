@@ -14,6 +14,8 @@ function AppView() {
     _createSineView.call(this);
     _createExpoView.call(this);
     _createCircView.call(this);
+    _createElasticView.call(this);
+    _createBackView.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -104,4 +106,32 @@ function _createCircView() {
   });
 
   this.add(circModifier).add(circView);
+}
+
+function _createElasticView() {
+  var elasticView = new ElasticView({
+    size: [100, 100]
+  });
+
+  var elasticModifier = new StateModifier({
+    transform: Transform.translate(-150, 1100, 0),
+    origin: [0.5, 0.5],
+    align: [0.5, 0]
+  });
+
+  this.add(ElasticModifier).add(ElasticView);
+}
+
+function _createBackView() {
+  var backView = new BackView({
+    size: [100, 100]
+  });
+
+  var backModifier = new StateModifier({
+    transform: Transform.translate(-150, 1100, 0),
+    origin: [0.5, 0.5],
+    align: [0.5, 0]
+  });
+
+  this.add(backModifier).add(backView);
 }
