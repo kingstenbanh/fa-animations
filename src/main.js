@@ -31,11 +31,16 @@ var downModifier1 = new StateModifier({
 // mainContext.add(rightModifier2).add(inOutQuadModifier).add(inOutQuadSurface);
 
 // Add Cubic curves to the context
-mainContext.add(inCubicModifier).add(inCubicSurface);
-mainContext.add(rightModifier1).add(outCubicModifier).add(outCubicSurface);
-mainContext.add(rightModifier2).add(inOutCubicModifier).add(inOutCubicSurface);
+// mainContext.add(inCubicModifier).add(inCubicSurface);
+// mainContext.add(rightModifier1).add(outCubicModifier).add(outCubicSurface);
+// mainContext.add(rightModifier2).add(inOutCubicModifier).add(inOutCubicSurface);
 
 // Add Quart curves to the context
-mainContext.add(inQuartModifier).add(inQuartSurface);
-mainContext.add(rightModifier1).add(outQuartModifier).add(outQuartSurface);
-mainContext.add(rightModifier2).add(inOutQuartModifier).add(inOutQuartSurface);
+// mainContext.add(inQuartModifier).add(inQuartSurface);
+// mainContext.add(rightModifier1).add(outQuartModifier).add(outQuartSurface);
+// mainContext.add(rightModifier2).add(inOutQuartModifier).add(inOutQuartSurface);
+
+// Add Quint curves to the context
+mainContext.add(inQuintModifier).add(inQuintSurface);
+mainContext.add(rightModifier1).add(outQuintModifier).add(outQuintSurface);
+mainContext.add(rightModifier2).add(inOutQuintModifier).add(inOutQuintSurface);
