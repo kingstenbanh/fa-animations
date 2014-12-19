@@ -25,13 +25,17 @@ var downModifier1 = new StateModifier({
 });
 
 
-// // Add Quad curve to the context
+// // Add Quad curves to the context
 // mainContext.add(inQuadModifier).add(inQuadSurface);
 // mainContext.add(rightModifier1).add(outQuadModifier).add(outQuadSurface);
 // mainContext.add(rightModifier2).add(inOutQuadModifier).add(inOutQuadSurface);
 
-// Add Cubic curve to the context
-mainContext.add(downModifier1);
+// Add Cubic curves to the context
 mainContext.add(inCubicModifier).add(inCubicSurface);
 mainContext.add(rightModifier1).add(outCubicModifier).add(outCubicSurface);
 mainContext.add(rightModifier2).add(inOutCubicModifier).add(inOutCubicSurface);
+
+// Add Quart curves to the context
+mainContext.add(inQuartModifier).add(inQuartSurface);
+mainContext.add(rightModifier1).add(outQuartModifier).add(outQuartSurface);
+mainContext.add(rightModifier2).add(inOutQuartModifier).add(inOutQuartSurface);
