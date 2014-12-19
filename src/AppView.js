@@ -10,6 +10,7 @@ function AppView() {
     _createQuadView.call(this);
     _createCubicView.call(this);
     _createQuartView.call(this);
+    _createQuintView.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -58,4 +59,18 @@ function _createQuartView() {
   });
 
   this.add(quartModifier).add(quartView);
+}
+
+function _createQuintView() {
+  var quintView = new QuintView({
+    size: [100, 100]
+  });
+
+  var quintModifier = new StateModifier({
+    transform: Transform.translate(-150, 700, 0),
+    origin: [0.5, 0.5],
+    align: [0.5, 0]
+  });
+
+  this.add(quintModifier).add(quintView);
 }
