@@ -61,11 +61,14 @@ var downModifier1 = new StateModifier({
 // mainContext.add(rightModifier2).add(inOutCircModifier).add(inOutCircSurface);
 
 // Add Elastic curves to the context
-mainContext.add(inElasticModifier).add(inElasticSurface);
-mainContext.add(rightModifier1).add(outElasticModifier).add(outElasticSurface);
-mainContext.add(rightModifier2).add(inOutElasticModifier).add(inOutElasticSurface);
+// mainContext.add(inElasticModifier).add(inElasticSurface);
+// mainContext.add(rightModifier1).add(outElasticModifier).add(outElasticSurface);
+// mainContext.add(rightModifier2).add(inOutElasticModifier).add(inOutElasticSurface);
 
-
+// Add Back curves to the context
+mainContext.add(inBackModifier).add(inBackSurface);
+mainContext.add(rightModifier1).add(outBackModifier).add(outBackSurface);
+mainContext.add(rightModifier2).add(inOutBackModifier).add(inOutBackSurface);
 
 
 
