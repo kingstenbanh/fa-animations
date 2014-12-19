@@ -30,5 +30,18 @@ function _createQuadView() {
   this.add(quadModifier).add(quadView);
 }
 
+function _createCubicView() {
+  var cubicView = new CubicView({
+    size: [100, 100]
+  });
+
+  var cubicModifier = new StateModifier({
+    transform: Transform.translate(-150, 300, 0),
+    origin: [0.5, 0.5],
+    align: [0.5, 0]
+  });
+
+  this.add(cubicModifier).add(cubicView);
+}
 
 
