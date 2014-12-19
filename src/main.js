@@ -18,13 +18,20 @@ var rightModifier1 = new StateModifier({
 var rightModifier2 = new StateModifier({
   transform: Transform.translate(400, 0, 0)
 });
+
 // move down Modifier
-var downModifier = new StateModifier({
+var downModifier1 = new StateModifier({
   transform: Transform.translate(0, 200, 0)
 });
 
 
-// Add Quad curve to the context
-mainContext.add(inQuadModifier).add(inQuadSurface);
-mainContext.add(rightModifier1).add(outQuadModifier).add(outQuadSurface);
-mainContext.add(rightModifier2).add(inOutQuadModifier).add(inOutQuadSurface);
+// // Add Quad curve to the context
+// mainContext.add(inQuadModifier).add(inQuadSurface);
+// mainContext.add(rightModifier1).add(outQuadModifier).add(outQuadSurface);
+// mainContext.add(rightModifier2).add(inOutQuadModifier).add(inOutQuadSurface);
+
+// Add Cubic curve to the context
+mainContext.add(downModifier1);
+mainContext.add(inCubicModifier).add(inCubicSurface);
+mainContext.add(rightModifier1).add(outCubicModifier).add(outCubicSurface);
+mainContext.add(rightModifier2).add(inOutCubicModifier).add(inOutCubicSurface);
