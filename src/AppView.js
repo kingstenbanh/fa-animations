@@ -9,6 +9,7 @@ function AppView() {
 
     _createQuadView.call(this);
     _createCubicView.call(this);
+    _createQuartView.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -45,3 +46,16 @@ function _createCubicView() {
 }
 
 
+function _createQuartView() {
+  var quartView = new QuartView({
+    size: [100, 100]
+  });
+
+  var quartModifier = new StateModifier({
+    transform: Transform.translate(-150, 500, 0),
+    origin: [0.5, 0.5],
+    align: [0.5, 0]
+  });
+
+  this.add(quartModifier).add(quartView);
+}
