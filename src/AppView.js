@@ -13,6 +13,7 @@ function AppView() {
     _createQuintView.call(this);
     _createSineView.call(this);
     _createExpoView.call(this);
+    _createCircView.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -91,3 +92,16 @@ function _createExpoView() {
   this.add(expoModifier).add(expoView);
 }
 
+function _createCircView() {
+  var circView = new CircView({
+    size: [100, 100]
+  });
+
+  var circModifier = new StateModifier({
+    transform: Transform.translate(-150, 1100, 0),
+    origin: [0.5, 0.5],
+    align: [0.5, 0]
+  });
+
+  this.add(circModifier).add(circView);
+}
