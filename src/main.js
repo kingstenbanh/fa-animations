@@ -66,9 +66,9 @@ var downModifier1 = new StateModifier({
 // mainContext.add(rightModifier2).add(inOutElasticModifier).add(inOutElasticSurface);
 
 // Add Back curves to the context
-mainContext.add(inBackModifier).add(inBackSurface);
-mainContext.add(rightModifier1).add(outBackModifier).add(outBackSurface);
-mainContext.add(rightModifier2).add(inOutBackModifier).add(inOutBackSurface);
+// mainContext.add(inBackModifier).add(inBackSurface);
+// mainContext.add(rightModifier1).add(outBackModifier).add(outBackSurface);
+// mainContext.add(rightModifier2).add(inOutBackModifier).add(inOutBackSurface);
 
 // Add Bounce curves to the context
 mainContext.add(inBounceModifier).add(inBounceSurface);
