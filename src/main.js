@@ -70,6 +70,13 @@ mainContext.add(inBackModifier).add(inBackSurface);
 mainContext.add(rightModifier1).add(outBackModifier).add(outBackSurface);
 mainContext.add(rightModifier2).add(inOutBackModifier).add(inOutBackSurface);
 
+// Add Bounce curves to the context
+mainContext.add(inBounceModifier).add(inBounceSurface);
+mainContext.add(rightModifier1).add(outBounceModifier).add(outBounceSurface);
+mainContext.add(rightModifier2).add(inOutBounceModifier).add(inOutBounceSurface);
+
+
+
 
 
 
