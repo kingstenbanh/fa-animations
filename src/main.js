@@ -25,7 +25,7 @@ var downModifier1 = new StateModifier({
 });
 
 
-// // Add Quad curves to the context
+// Add Quad curves to the context
 // mainContext.add(inQuadModifier).add(inQuadSurface);
 // mainContext.add(rightModifier1).add(outQuadModifier).add(outQuadSurface);
 // mainContext.add(rightModifier2).add(inOutQuadModifier).add(inOutQuadSurface);
@@ -41,6 +41,11 @@ var downModifier1 = new StateModifier({
 // mainContext.add(rightModifier2).add(inOutQuartModifier).add(inOutQuartSurface);
 
 // Add Quint curves to the context
-mainContext.add(inQuintModifier).add(inQuintSurface);
-mainContext.add(rightModifier1).add(outQuintModifier).add(outQuintSurface);
-mainContext.add(rightModifier2).add(inOutQuintModifier).add(inOutQuintSurface);
+// mainContext.add(inQuintModifier).add(inQuintSurface);
+// mainContext.add(rightModifier1).add(outQuintModifier).add(outQuintSurface);
+// mainContext.add(rightModifier2).add(inOutQuintModifier).add(inOutQuintSurface);
+
+// Add Sine curves to the context
+mainContext.add(inSineModifier).add(inSineSurface);
+mainContext.add(rightModifier1).add(outSineModifier).add(outSineSurface);
+mainContext.add(rightModifier2).add(inOutSineModifier).add(inOutSineSurface);
