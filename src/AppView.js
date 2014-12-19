@@ -66,6 +66,20 @@ function _createQuartView() {
   this.add(quartModifier).add(quartView);
 }
 
+function _createQuintView() {
+  var quintView = new QuintView({
+    size: [100, 100]
+  });
+
+  var quintModifier = new StateModifier({
+    transform: Transform.translate(-150, 500, 0),
+    origin: [0.5, 0.5],
+    align: [0.5, 0]
+  });
+
+  this.add(quintModifier).add(quintView);
+}
+
 function _createSineView() {
   var sineView = new SineView({
     size: [100, 100]
@@ -119,7 +133,7 @@ function _createElasticView() {
     align: [0.5, 0]
   });
 
-  this.add(ElasticModifier).add(ElasticView);
+  this.add(elasticModifier).add(elasticView);
 }
 
 function _createBackView() {
@@ -134,4 +148,18 @@ function _createBackView() {
   });
 
   this.add(backModifier).add(backView);
+}
+
+function _createBounceView() {
+  var bounceView = new BounceView({
+    size: [100, 100]
+  });
+
+  var bounceModifier = new StateModifier({
+    transform: Transform.translate(-150, 1100, 0),
+    origin: [0.5, 0.5],
+    align: [0.5, 0]
+  });
+
+  this.add(bounceModifier).add(bounceView);
 }
