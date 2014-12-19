@@ -51,6 +51,36 @@ var downModifier1 = new StateModifier({
 // mainContext.add(rightModifier2).add(inOutSineModifier).add(inOutSineSurface);
 
 // Add Expo curves to the context
-mainContext.add(inExpoModifier).add(inExpoSurface);
-mainContext.add(rightModifier1).add(outExpoModifier).add(outExpoSurface);
-mainContext.add(rightModifier2).add(inOutExpoModifier).add(inOutExpoSurface);
+// mainContext.add(inExpoModifier).add(inExpoSurface);
+// mainContext.add(rightModifier1).add(outExpoModifier).add(outExpoSurface);
+// mainContext.add(rightModifier2).add(inOutExpoModifier).add(inOutExpoSurface);
+
+// Add Circ curves to the context
+mainContext.add(inCircModifier).add(inCircSurface);
+mainContext.add(rightModifier1).add(outCircModifier).add(outCircSurface);
+mainContext.add(rightModifier2).add(inOutCircModifier).add(inOutCircSurface);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
