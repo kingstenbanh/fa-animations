@@ -4,7 +4,7 @@ var Transform = famous.core.Transform;
 var StateModifier = famous.modifiers.StateModifier;
 var Easing = famous.transitions.Easing;
 
-function SineView() {
+function ExpoView() {
     View.apply(this, arguments);
 
     this.rootModifier = new StateModifier({
@@ -13,57 +13,57 @@ function SineView() {
 
     this.mainNode = this.add(this.rootModifier);
 
-    _createInSine.call(this);
-    _createOutSine.call(this);
-    _createInOutSine.call(this);
+    _createInExpo.call(this);
+    _createOutExpo.call(this);
+    _createInOutExpo.call(this);
 }
 
-SineView.prototype = Object.create(View.prototype);
-SineView.prototype.constructor = SineView;
+ExpoView.prototype = Object.create(View.prototype);
+ExpoView.prototype.constructor = ExpoView;
 
-SineView.DEFAULT_OPTIONS = {};
+ExpoView.DEFAULT_OPTIONS = {};
 
-// inSine curve
-function _createInSine() {
-  var inSineSurface = new Surface(defaultOptions('inSine'));
+// inExpo curve
+function _createInExpo() {
+  var inExpoSurface = new Surface(defaultOptions('inExpo'));
 
-  var inSineModifier = new StateModifier();
+  var inExpoModifier = new StateModifier();
 
-  inSineModifier.setTransform(
+  inExpoModifier.setTransform(
     Transform.translate(100, 100, 0),
-    setTransition('inSine')
+    setTransition('inExpo')
   );
 
-  this.mainNode.add(inSineModifier).add(inSineSurface);
+  this.mainNode.add(inExpoModifier).add(inExpoSurface);
 }
 
 
-// outSine curve
-function _createOutSine() {
-  var outSineSurface = new Surface(defaultOptions('outSine'));
+// outExpo curve
+function _createOutExpo() {
+  var outExpoSurface = new Surface(defaultOptions('outExpo'));
 
-  var outSineModifier = new StateModifier();
+  var outExpoModifier = new StateModifier();
 
-  outSineModifier.setTransform(
+  outExpoModifier.setTransform(
     Transform.translate(300, 100, 0),
-    setTransition('outSine')
+    setTransition('outExpo')
   );
 
-  this.mainNode.add(outSineModifier).add(outSineSurface);
+  this.mainNode.add(outExpoModifier).add(outExpoSurface);
 }
 
-// inOutSine curve
-function _createInOutSine() {
-  var inOutSineSurface = new Surface(defaultOptions('inOutSine'));
+// inOutExpo curve
+function _createInOutExpo() {
+  var inOutExpoSurface = new Surface(defaultOptions('inOutExpo'));
 
-  var inOutSineModifier = new StateModifier();
+  var inOutExpoModifier = new StateModifier();
 
-  inOutSineModifier.setTransform(
+  inOutExpoModifier.setTransform(
     Transform.translate(500, 100, 0),
-    setTransition('inOutSine')
+    setTransition('inOutExpo')
   );
 
-  this.mainNode.add(inOutSineModifier).add(inOutSineSurface);
+  this.mainNode.add(inOutExpoModifier).add(inOutExpoSurface);
 
 }
 
