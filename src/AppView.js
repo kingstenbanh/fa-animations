@@ -7,7 +7,8 @@ var Easing = famous.transitions.Easing;
 function AppView() {
     View.apply(this, arguments);
 
-    createQuadCurves.call(this);
+    _createQuadCurves.call(this);
+    _createCubicCurves.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -15,7 +16,7 @@ AppView.prototype.constructor = AppView;
 
 AppView.DEFAULT_OPTIONS = {};
 
-function createQuadCurves() {
+function _createQuadCurves() {
   var quadCurvesView = new QuadView();
 
   var quadCurvesModifier = new StateModifier({
@@ -25,3 +26,12 @@ function createQuadCurves() {
   this.add(quadCurvesModifier).add(quadCurvesView);
 }
 
+function _createCubicCurves() {
+  var cubicCurvesView = new CubicView();
+
+  var cubicCurvesModifier = new StateModifier({
+    transform: Transform.translate(600, 250, 0)
+  });
+
+  this.add(cubicCurvesModifier).add(cubicCurvesView);
+}
