@@ -11,6 +11,7 @@ function AppView() {
     _createCubicCurves.call(this);
     _createQuartCurves.call(this);
     _createQuintCurves.call(this);
+    _createSineCurves.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -58,4 +59,13 @@ function _createQuintCurves() {
   this.add(quintCurvesModifier).add(quintCurvesView);
 }
 
+function _createSineCurves() {
+  var sineCurvesView = new SineView();
+
+  var sineCurvesModifier = new StateModifier({
+    transform: Transform.translate(600, 850, 0)
+  });
+
+  this.add(sineCurvesModifier).add(sineCurvesView);
+}
 
