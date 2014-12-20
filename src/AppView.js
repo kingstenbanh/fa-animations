@@ -15,6 +15,7 @@ function AppView() {
     _createExpoCurves.call(this);
     _createCircCurves.call(this);
     _createElasticCurves.call(this);
+    _createBackCurves.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -100,4 +101,14 @@ function _createElasticCurves() {
   });
 
   this.add(elasticCurvesModifier).add(elasticCurvesView);
+}
+
+function _createBackCurves() {
+  var backCurvesView = new BackView();
+
+  var backCurvesModifier = new StateModifier({
+    transform: Transform.translate(600, 1650, 0)
+  });
+
+  this.add(backCurvesModifier).add(backCurvesView);
 }
