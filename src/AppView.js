@@ -10,6 +10,7 @@ function AppView() {
     _createQuadCurves.call(this);
     _createCubicCurves.call(this);
     _createQuartCurves.call(this);
+    _createQuintCurves.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -46,3 +47,15 @@ function _createQuartCurves() {
 
   this.add(quartCurvesModifier).add(quartCurvesView);
 }
+
+function _createQuintCurves() {
+  var quintCurvesView = new QuintView();
+
+  var quintCurvesModifier = new StateModifier({
+    transform: Transform.translate(600, 650, 0)
+  });
+
+  this.add(quintCurvesModifier).add(quintCurvesView);
+}
+
+
