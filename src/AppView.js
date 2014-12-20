@@ -7,15 +7,7 @@ var Easing = famous.transitions.Easing;
 function AppView() {
     View.apply(this, arguments);
 
-    _createQuadView.call(this);
-    _createCubicView.call(this);
-    _createQuartView.call(this);
-    _createQuintView.call(this);
-    _createSineView.call(this);
-    _createExpoView.call(this);
-    _createCircView.call(this);
-    _createElasticView.call(this);
-    _createBackView.call(this);
+    createQuadCurves.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -23,143 +15,13 @@ AppView.prototype.constructor = AppView;
 
 AppView.DEFAULT_OPTIONS = {};
 
-function _createQuadView() {
-  var quadView = new QuadView({
-    size: [100, 100]
+function createQuadCurves() {
+  var quadCurvesView = new QuadView();
+
+  var quadCurvesModifier = new StateModifier({
+    transform: Transform.translate(600, 50, 0)
   });
 
-  var quadModifier = new StateModifier({
-    transform: Transform.translate(-150, 100, 0),
-    origin: [0.5, 0.5],
-    align: [0.5, 0]
-  });
-
-  this.add(quadModifier).add(quadView);
+  this.add(quadCurvesModifier).add(quadCurvesView);
 }
 
-function _createCubicView() {
-  var cubicView = new CubicView({
-    size: [100, 100]
-  });
-
-  var cubicModifier = new StateModifier({
-    transform: Transform.translate(-150, 300, 0),
-    origin: [0.5, 0.5],
-    align: [0.5, 0]
-  });
-
-  this.add(cubicModifier).add(cubicView);
-}
-
-
-function _createQuartView() {
-  var quartView = new QuartView({
-    size: [100, 100]
-  });
-
-  var quartModifier = new StateModifier({
-    transform: Transform.translate(-150, 500, 0),
-    origin: [0.5, 0.5],
-    align: [0.5, 0]
-  });
-
-  this.add(quartModifier).add(quartView);
-}
-
-function _createQuintView() {
-  var quintView = new QuintView({
-    size: [100, 100]
-  });
-
-  var quintModifier = new StateModifier({
-    transform: Transform.translate(-150, 500, 0),
-    origin: [0.5, 0.5],
-    align: [0.5, 0]
-  });
-
-  this.add(quintModifier).add(quintView);
-}
-
-function _createSineView() {
-  var sineView = new SineView({
-    size: [100, 100]
-  });
-
-  var sineModifier = new StateModifier({
-    transform: Transform.translate(-150, 900, 0),
-    origin: [0.5, 0.5],
-    align: [0.5, 0]
-  });
-
-  this.add(sineModifier).add(sineView);
-}
-
-function _createExpoView() {
-  var expoView = new ExpoView({
-    size: [100, 100]
-  });
-
-  var expoModifier = new StateModifier({
-    transform: Transform.translate(-150, 1100, 0),
-    origin: [0.5, 0.5],
-    align: [0.5, 0]
-  });
-
-  this.add(expoModifier).add(expoView);
-}
-
-function _createCircView() {
-  var circView = new CircView({
-    size: [100, 100]
-  });
-
-  var circModifier = new StateModifier({
-    transform: Transform.translate(-150, 1100, 0),
-    origin: [0.5, 0.5],
-    align: [0.5, 0]
-  });
-
-  this.add(circModifier).add(circView);
-}
-
-function _createElasticView() {
-  var elasticView = new ElasticView({
-    size: [100, 100]
-  });
-
-  var elasticModifier = new StateModifier({
-    transform: Transform.translate(-150, 1100, 0),
-    origin: [0.5, 0.5],
-    align: [0.5, 0]
-  });
-
-  this.add(elasticModifier).add(elasticView);
-}
-
-function _createBackView() {
-  var backView = new BackView({
-    size: [100, 100]
-  });
-
-  var backModifier = new StateModifier({
-    transform: Transform.translate(-150, 1100, 0),
-    origin: [0.5, 0.5],
-    align: [0.5, 0]
-  });
-
-  this.add(backModifier).add(backView);
-}
-
-function _createBounceView() {
-  var bounceView = new BounceView({
-    size: [100, 100]
-  });
-
-  var bounceModifier = new StateModifier({
-    transform: Transform.translate(-150, 1100, 0),
-    origin: [0.5, 0.5],
-    align: [0.5, 0]
-  });
-
-  this.add(bounceModifier).add(bounceView);
-}
