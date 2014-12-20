@@ -18,7 +18,7 @@ function createGrid(easingCurve, dimensions) {
 
     var transitionModifier = new StateModifier();
     transitionModifier.setTransform(
-      Transform.translate(100, 100, 0),
+      Transform.translate(0, 100, 0),
       { duration: 1000, curve: Easing[types[i] + easingCurve] }
     );
 
@@ -30,7 +30,8 @@ function createGrid(easingCurve, dimensions) {
         color: '#fff',
         textAlign: 'center',
         lineHeight: '100px',
-        borderRadius: '50px'
+        borderRadius: '50px',
+        boxShadow: '2px 2px 100px grey'
       }
     });
 
