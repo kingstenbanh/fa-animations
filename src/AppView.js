@@ -16,6 +16,7 @@ function AppView() {
     _createCircCurves.call(this);
     _createElasticCurves.call(this);
     _createBackCurves.call(this);
+    _createBounceCurves.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -111,4 +112,14 @@ function _createBackCurves() {
   });
 
   this.add(backCurvesModifier).add(backCurvesView);
+}
+
+function _createBounceCurves() {
+  var bounceCurvesView = new BounceView();
+
+  var bounceCurvesModifier = new StateModifier({
+    transform: Transform.translate(600, 1850, 0)
+  });
+
+  this.add(bounceCurvesModifier).add(bounceCurvesView);
 }
