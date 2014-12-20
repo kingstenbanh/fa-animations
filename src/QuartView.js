@@ -3,19 +3,19 @@ var Surface = famous.core.Surface;
 var Transform = famous.core.Transform;
 var StateModifier = famous.modifiers.StateModifier;
 var Easing = famous.transitions.Easing;
+var GridLayout = famous.views.GridLayout;
 
 function QuartView() {
     View.apply(this, arguments);
 
     this.rootModifier = new StateModifier({
-      size: [400, 100],
+      size: [600, 100],
+      origin: [0.5, 0.5]
     });
 
     this.mainNode = this.add(this.rootModifier);
 
-    _createInQuart.call(this);
-    _createOutQuart.call(this);
-    _createInOutQuart.call(this);
+    _createQuartSurfaces.call(this);
 }
 
 QuartView.prototype = Object.create(View.prototype);
@@ -23,48 +23,9 @@ QuartView.prototype.constructor = QuartView;
 
 QuartView.DEFAULT_OPTIONS = {};
 
-// inQuart curve
-function _createInQuart() {
-  var inQuartSurface = new Surface(defaultOptions('inQuart'));
-
-  var inQuartModifier = new StateModifier();
-
-  inQuartModifier.setTransform(
-    Transform.translate(100, 100, 0),
-    setTransition('inQuart')
-  );
-
-  this.mainNode.add(inQuartModifier).add(inQuartSurface);
-}
-
-
-// outQuart curve
-function _createOutQuart() {
-  var outQuartSurface = new Surface(defaultOptions('outQuart'));
-
-  var outQuartModifier = new StateModifier();
-
-  outQuartModifier.setTransform(
-    Transform.translate(300, 100, 0),
-    setTransition('outQuart')
-  );
-
-  this.mainNode.add(outQuartModifier).add(outQuartSurface);
-}
-
-// inOutQuart curve
-function _createInOutQuart() {
-  var inOutQuartSurface = new Surface(defaultOptions('inOutQuart'));
-
-  var inOutQuartModifier = new StateModifier();
-
-  inOutQuartModifier.setTransform(
-    Transform.translate(500, 100, 0),
-    setTransition('inOutQuart')
-  );
-
-  this.mainNode.add(inOutQuartModifier).add(inOutQuartSurface);
-
+function _createQuartSurfaces() {
+  var quartSurfaces = createGrid('Quart', [3, 1]);
+  this.mainNode.add(quartSurfaces);
 }
 
 
