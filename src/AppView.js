@@ -12,6 +12,7 @@ function AppView() {
     _createQuartCurves.call(this);
     _createQuintCurves.call(this);
     _createSineCurves.call(this);
+    _createExpoCurves.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -69,3 +70,12 @@ function _createSineCurves() {
   this.add(sineCurvesModifier).add(sineCurvesView);
 }
 
+function _createExpoCurves() {
+  var expoCurvesView = new ExpoView();
+
+  var expoCurvesModifier = new StateModifier({
+    transform: Transform.translate(600, 1050, 0)
+  });
+
+  this.add(expoCurvesModifier).add(expoCurvesView);
+}
