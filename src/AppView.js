@@ -13,6 +13,8 @@ function AppView() {
     _createQuintCurves.call(this);
     _createSineCurves.call(this);
     _createExpoCurves.call(this);
+    _createCircCurves.call(this);
+    _createElasticCurves.call(this);
 }
 
 AppView.prototype = Object.create(View.prototype);
@@ -78,4 +80,24 @@ function _createExpoCurves() {
   });
 
   this.add(expoCurvesModifier).add(expoCurvesView);
+}
+
+function _createCircCurves() {
+  var circCurvesView = new CircView();
+
+  var circCurvesModifier = new StateModifier({
+    transform: Transform.translate(600, 1250, 0)
+  });
+
+  this.add(circCurvesModifier).add(circCurvesView);
+}
+
+function _createElasticCurves() {
+  var elasticCurvesView = new ElasticView();
+
+  var elasticCurvesModifier = new StateModifier({
+    transform: Transform.translate(600, 1450, 0)
+  });
+
+  this.add(elasticCurvesModifier).add(elasticCurvesView);
 }

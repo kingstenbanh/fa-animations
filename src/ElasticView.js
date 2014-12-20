@@ -3,19 +3,19 @@ var Surface = famous.core.Surface;
 var Transform = famous.core.Transform;
 var StateModifier = famous.modifiers.StateModifier;
 var Easing = famous.transitions.Easing;
+var GridLayout = famous.views.GridLayout;
 
 function ElasticView() {
     View.apply(this, arguments);
 
     this.rootModifier = new StateModifier({
-      size: [400, 100],
+      size: [600, 100],
+      origin: [0.5, 0.5]
     });
 
     this.mainNode = this.add(this.rootModifier);
 
-    _createInElastic.call(this);
-    _createOutElastic.call(this);
-    _createInOutElastic.call(this);
+    _createElasticSurfaces.call(this);
 }
 
 ElasticView.prototype = Object.create(View.prototype);
@@ -23,48 +23,9 @@ ElasticView.prototype.constructor = ElasticView;
 
 ElasticView.DEFAULT_OPTIONS = {};
 
-// inElastic curve
-function _createInElastic() {
-  var inElasticSurface = new Surface(defaultOptions('inElastic'));
-
-  var inElasticModifier = new StateModifier();
-
-  inElasticModifier.setTransform(
-    Transform.translate(100, 100, 0),
-    setTransition('inElastic')
-  );
-
-  this.mainNode.add(inElasticModifier).add(inElasticSurface);
-}
-
-
-// outElastic curve
-function _createOutElastic() {
-  var outElasticSurface = new Surface(defaultOptions('outElastic'));
-
-  var outElasticModifier = new StateModifier();
-
-  outElasticModifier.setTransform(
-    Transform.translate(300, 100, 0),
-    setTransition('outElastic')
-  );
-
-  this.mainNode.add(outElasticModifier).add(outElasticSurface);
-}
-
-// inOutElastic curve
-function _createInOutElastic() {
-  var inOutElasticSurface = new Surface(defaultOptions('inOutElastic'));
-
-  var inOutElasticModifier = new StateModifier();
-
-  inOutElasticModifier.setTransform(
-    Transform.translate(500, 100, 0),
-    setTransition('inOutElastic')
-  );
-
-  this.mainNode.add(inOutElasticModifier).add(inOutElasticSurface);
-
+function _createElasticSurfaces() {
+  var elasticSurfaces = createGrid('Elastic', [3, 1]);
+  this.mainNode.add(elasticSurfaces);
 }
 
 
